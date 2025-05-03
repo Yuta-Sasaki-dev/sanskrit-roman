@@ -1,4 +1,4 @@
-# sanskrit-roman README
+# Sanskrit-Roman
 
 Under construction...
 
