@@ -10,6 +10,26 @@ Soon...
 
 No Requirements.
 
+## Rules to Replace alphabets
+
+Replacement `%skt{}`
+
+### Vowels
+
+Replacement Rules for Vowels.
+
+|Vowel|Rules|Before Replacement|After Replacement|
+|:-:|:-:|:-:|:-:|
+|long vowels|`=` + short vowels (contains r)|`=a`|`ā`|
+|r, l as vowels|`,` + `r` or `l`|`,r`|`r̥`|
+
+#### Accentuation
+
+|Accent type|Rules|Before Replacement|After Replacement|
+|:-:|:-:|:-:|:-:|
+|Udātta Accent|`,([vowels])`|`,(a)`, `,(=a)`|`á`, `ā́`|
+|Svarita Accent|`_([vowels])`|`_(a)`, `_(=a)`|`à`, `ā̀`|
+
 ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
@@ -27,19 +47,9 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+First Release.
 
 ---
 
@@ -56,10 +66,3 @@ You can author your README using Visual Studio Code. Here are some useful editor
 * Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
 * Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
 * Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

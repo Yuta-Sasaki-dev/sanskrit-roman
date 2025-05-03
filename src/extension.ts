@@ -1,22 +1,66 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+import { KeyObject } from 'crypto';
 import * as vscode from 'vscode';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "sanskrit-roman" is now active!');
+	const replacementMap = new Map<string, string>([
+		['=a', 'ā'],
+		['=A', 'Ā'],
+		['=i', 'ī'],
+		['=I', 'Ī'],
+		['=u', 'ū'],
+		['=U', 'Ū'],
+		[',r', 'r̥'],
+		['=r', 'r̥̄'],
+		[',R', 'R̥'],
+		['=R', 'R̥̄'],
+		[',l', 'l̥'],
+		[',(a)', 'á'],
+		['_(=a)', 'ā́'],
+		['`(a)', 'à'],
+		['`(=a)', 'ā̀'],
+		['\\.i', 'í'],
+		['_i', 'ī́'],
+		[',i', 'ì'],
+		['\\|i', 'ī̀'],
+		['\\.u', 'ú'],
+		['_u', 'ū́'],
+		[',u', 'ù'],
+		['\\|u', 'ū̀'],
+		['\\.r', 'ŕ̥'],
+		['_r', 'r̥̄́'],
+		['\\`r', 'r̥̀'],
+		['\\|r', 'r̥̄̀'],
+		['\\.e', 'é'],
+		[',e', 'è'],
+		['\\.o', 'ó'],
+		[',o', 'ò'],
+		[',n', 'ṅ'],
+		[',N', 'Ṅ'],
+		['~n', 'ñ'],
+		['~N', 'Ñ'],
+		['\\.t', 'ṭ'],
+		['\\.T', 'Ṭ'],
+		['\\.d', 'ḍ'],
+		['\\.D', 'Ḍ'],
+		['\\.n', 'ṇ'],
+		['\\.N', 'Ṇ'],
+		['z', 'ś'],
+		['Z', 'Ś'],
+		['\\.s', 'ṣ'],
+		['\\.S', 'Ṣ'],
+		['\\.m', 'ṃ'],
+		['\\.h', 'ḥ'],
+		['\\,m', 'm̐'],
+		['\\.l', 'ḷ'],
+		[':root:', '√']
+	  ]);
+	  
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('sanskrit-roman.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Sanskrit-Roman!');
+	const disposable = vscode.commands.registerCommand('sanskrit-roman.onCommand', () => {
+		const editor = vscode.window.activeTextEditor;
+		const document = editor?.document;
+		const text = document?.getText();
 	});
 
 	context.subscriptions.push(disposable);
