@@ -27,8 +27,8 @@ Replacement Rules for Vowels.
 
 |Accent type|Rules|Before Replacement|After Replacement|
 |:-:|:-:|:-:|:-:|
-|Udātta Accent|`,([vowels])`|`,(a)`, `,(=a)`|`á`, `ā́`|
-|Svarita Accent|`_([vowels])`|`_(a)`, `_(=a)`|`à`, `ā̀`|
+|Udātta Accent|`,(vowel)`|`,(a)`, `,(=a)`|`á`, `ā́`|
+|Svarita Accent|`_(vowel)`|`_(a)`, `_(=a)`|`à`, `ā̀`|
 
 ### Consonants
 
