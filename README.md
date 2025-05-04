@@ -18,9 +18,9 @@ Replacement `%skt{}`
 
 Replacement Rules for Vowels.
 
-|Vowel|Rules|Before Replacement|After Replacement|
+|Vowel Type|Rules|Before Replacement|After Replacement|
 |:-:|:-:|:-:|:-:|
-|long vowels|`=` + short vowels (contains r)|`=a`|`ā`|
+|long vowels|`=` + short vowels (contains r)|`=a`, `=A`|`ā`, `Ā`|
 |r, l as vowels|`,` + `r` or `l`|`,r`|`r̥`|
 
 #### Accentuation
@@ -29,6 +29,20 @@ Replacement Rules for Vowels.
 |:-:|:-:|:-:|:-:|
 |Udātta Accent|`,([vowels])`|`,(a)`, `,(=a)`|`á`, `ā́`|
 |Svarita Accent|`_([vowels])`|`_(a)`, `_(=a)`|`à`, `ā̀`|
+
+### Consonants
+
+|Consonant Type|Rules|Example(Before)|Example(After)|
+|:-:|:-:|:-:|:-:|
+|Guttural Nasal|`,` + n|`,n`|`ṅ`|
+|Combining Dot Below(Retroflex etc.)|`.` + t, d, n, s, m, h|`.t`, `.s`|`ṭ`, `ṣ`|
+|Palatal Nasal|`~` + n|`~n`|`ñ`|
+|Palatal Fricative|`z`|`z`|`ś`|
+|Anunāsika|`,` + m|`,m`|`m̐`|
+
+### Others
+
+`:root:` : `√`
 
 ## Extension Settings
 
