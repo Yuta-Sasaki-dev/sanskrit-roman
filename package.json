@@ -10,17 +10,17 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./dist/extension.js",
+  "main": "./src/extension.ts",
   "contributes": {
     "commands": [
       {
         "command": "sanskrit-roman.onCommand",
-        "title": "Hello World"
+        "title": "Convert Alphabets"
       }
     ],
     "keybindings": [
       {
-        "command": "extension.onCommand",
+        "command": "sanskrit-roman.onCommand",
         "key": "alt+s r",
         "when": "editorTextFocus"
       }
