@@ -18,31 +18,31 @@ export function activate(context: vscode.ExtensionContext) {
 		[',N', 'Ṅ'],
 		['~n', 'ñ'],
 		['~N', 'Ñ'],
-		['\.t', 'ṭ'],
-		['\.T', 'Ṭ'],
-		['\.d', 'ḍ'],
-		['\.D', 'Ḍ'],
-		['\.n', 'ṇ'],
-		['\.N', 'Ṇ'],
+		['.t', 'ṭ'],
+		['.T', 'Ṭ'],
+		['.d', 'ḍ'],
+		['.D', 'Ḍ'],
+		['.n', 'ṇ'],
+		['.N', 'Ṇ'],
 		[',s', 'ś'],
 		[',S', 'Ś'],
-		['\.s', 'ṣ'],
-		['\.S', 'Ṣ'],
-		['\.m', 'ṃ'],
-		['\.h', 'ḥ'],
-		['\,m', 'm̐'],
-		['\.l', 'ḷ'],
+		['.s', 'ṣ'],
+		['.S', 'Ṣ'],
+		['.m', 'ṃ'],
+		['.h', 'ḥ'],
+		[',m', 'm̐'],
+		['.l', 'ḷ'],
 		[':root:', '√']
 	]);
 	// Marker for target of transcript
-	const circumflex = /%skt\{(.*?)\}/g;
+	const marker = /%skt\{(.*?)\}/g;
 
 	const udatta = /,\(\p{L}\p{M}?\)/gu;
 	const svarita = /_\(\p{L}\p{M}?\)/gu;
 
 	// Add accentuation for vedic texts
 	const accentuation = (text: string, regex: RegExp) => {
-		const accentType = (regexName: any) => {
+		const accentType = (regexName: RegExp) => {
 			switch (regexName) {
 				case udatta:
 					return "\u0301";
@@ -60,20 +60,21 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Basic transcript process
 	const sanskritTranscript = (text: string) => {
+		let processedText = "";
 		for (const [key, value] of replacementMap) {
-			text = text?.replace(key, value);
+			const regexKey = new RegExp(`/${key}/gu`);
+			processedText = text?.replace(regexKey, value);
 		}
-		const processedText: string = text;
 		if (udatta.test(processedText)) {
-			text = accentuation(processedText, udatta);
+			processedText = accentuation(processedText, udatta);
 		} else if (svarita.test(processedText)) {
-			text = accentuation(processedText, svarita);
+			processedText = accentuation(processedText, svarita);
 		}
-		return text;
+		return processedText;
 	};
 
 	const validateText = (input: string) => {
-		const output = input.replace(circumflex, (match, textContent) => {
+		const output = input.replace(marker, (match, textContent) => {
 			const validText = sanskritTranscript(textContent);
 			return validText;
 		});
