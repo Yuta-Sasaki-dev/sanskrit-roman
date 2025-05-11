@@ -37,7 +37,7 @@ Replacement Rules for Vowels.
 |Guttural Nasal|`,` + n|`,n`|`ṅ`|
 |Combining Dot Below(Retroflex etc.)|`.` + t, d, n, s, m, h, l|`.t`, `.s`|`ṭ`, `ṣ`|
 |Palatal Nasal|`~` + n|`~n`|`ñ`|
-|Palatal Fricative|`z`|`z`|`ś`|
+|Palatal Fricative|`,` + s|`,s`|`ś`|
 |Anunāsika|`,` + m|`,m`|`m̐`|
 
 ### Others
