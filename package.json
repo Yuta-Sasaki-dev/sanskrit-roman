@@ -9,7 +9,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:sanskrit-roman.execReplace"
+  ],
   "main": "./src/extension.ts",
   "contributes": {
     "commands": [
@@ -40,7 +42,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
+    "@types/node": "^22.15.17",
     "@types/vscode": "^1.99.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
@@ -51,5 +53,8 @@
     "typescript": "^5.8.3",
     "webpack": "^5.99.7",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.3.2"
   }
 }
