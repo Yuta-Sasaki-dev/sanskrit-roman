@@ -35,21 +35,25 @@ export function activate(context: vscode.ExtensionContext) {
 		[':root:', '√']
 	]);
 	// Marker for target of transcript
-	const circumflex = /\%skt\{(.*?)\}/g;
+	const circumflex = /%skt\{(.*?)\}/g;
 
 	const udatta = /,\(\p{L}\p{M}?\)/gu;
 	const svarita = /_\(\p{L}\p{M}?\)/gu;
 
 	// Add accentuation for vedic texts
 	const accentuation = (text: string, regex: RegExp) => {
-		const accentType: string =
-			udatta.test(text) === true
-				? "\u0301"
-				: svarita.test(text) === true
-					? "\u0300"
-					: "";
+		const accentType = (regexName: any) => {
+			switch (regexName) {
+				case udatta:
+					return "\u0301";
+				case svarita:
+					return "\u0300";
+				default:
+					break;
+			}
+		};
 		const replacedText = text.replace(regex, (match, baseLetter) => {
-			return baseLetter + accentType;
+			return baseLetter + accentType(regex);
 		});
 		return replacedText;
 	};
@@ -57,13 +61,13 @@ export function activate(context: vscode.ExtensionContext) {
 	// Basic transcript process
 	const sanskritTranscript = (text: string) => {
 		for (const [key, value] of replacementMap) {
-			text?.replaceAll(key, value);
+			text = text?.replace(key, value);
 		}
 		const processedText: string = text;
 		if (udatta.test(processedText)) {
-			accentuation(processedText, udatta);
+			text = accentuation(processedText, udatta);
 		} else if (svarita.test(processedText)) {
-			accentuation(processedText, svarita);
+			text = accentuation(processedText, svarita);
 		}
 		return text;
 	};
@@ -78,9 +82,29 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const disposable = vscode.commands.registerCommand('sanskrit-roman.execReplace', () => {
 		const editor = vscode.window.activeTextEditor;
-		const document = editor?.document;
-		const text = document?.getText() ?? "";
-		validateText(text);
+
+		if (editor) {
+			const document = editor.document;
+			const text = document?.getText() ?? "";
+			const processedText = validateText(text);
+			editor.edit(editApply => {
+				const fullRangeText = new vscode.Range(
+					new vscode.Position(0, 0),
+					document.lineAt(document.lineCount - 1).range.end
+				);
+				editApply.replace(fullRangeText, processedText);
+			})
+			.then(success => {
+				if (success) {
+					vscode.window.setStatusBarMessage('Sanskrit Romanization Applied.');
+				} else {
+					console.error('Text replacement failed.');
+					vscode.window.showErrorMessage('Failed to apply Sanskrit romanization.');
+				}
+			});
+		} else {
+			vscode.window.showInformationMessage('No Active Editor found.');
+		}
 	});
 
 	context.subscriptions.push(disposable);

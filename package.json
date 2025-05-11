@@ -1,5 +1,6 @@
 {
   "name": "sanskrit-roman",
+  "publisher": "Yuta Sasaki",
   "displayName": "Sanskrit-Roman",
   "description": "Romanized-transcription for sanskrit texts.",
   "version": "0.0.1",
@@ -10,12 +11,12 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./src/extension.ts",
+  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "sanskrit-roman.execReplace",
-        "title": "Convert Alphabets"
+        "title": "Sanskrit-Roman"
       }
     ],
     "keybindings": [
