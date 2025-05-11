@@ -9,9 +9,7 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:sanskrit-roman.execReplace"
-  ],
+  "activationEvents": [],
   "main": "./src/extension.ts",
   "contributes": {
     "commands": [

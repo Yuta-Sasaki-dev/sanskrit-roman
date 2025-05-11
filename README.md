@@ -1,18 +1,24 @@
 # Sanskrit-Roman
 
-Under construction...
+This extension converts plain alphabets to romanized-transcript for Sanskrit (or Old Indo-Aryan).
 
 ## Features
 
-Soon...
-
-## Requirements
-
-No Requirements.
+You can typing Sanskrit texts without using MS Word or other proprietary softwares.
 
 ## Rules to Replace alphabets
 
-Replacement `%skt{}`
+Replace texts in circumflex `%skt{}`.
+
+### Example
+
+Original text:
+
+`%skt{dharmaikat=an=a.h puru.s=a yad=asan satyav=adina.h /}`
+
+Processed text:
+
+`dharmaikatānāḥ puruṣā yadāsan satyavādinaḥ /`;
 
 ### Vowels
 

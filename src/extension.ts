@@ -1,5 +1,3 @@
-import { KeyObject } from 'crypto';
-import { stringify } from 'querystring';
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -56,16 +54,16 @@ export function activate(context: vscode.ExtensionContext) {
 		return replacedText;
 	};
 
-	// Basic transcript proccess
+	// Basic transcript process
 	const sanskritTranscript = (text: string) => {
 		for (const [key, value] of replacementMap) {
 			text?.replaceAll(key, value);
 		}
-		const proccessedText: string = text;
-		if (udatta.test(proccessedText)) {
-			accentuation(proccessedText, udatta);
-		} else if (svarita.test(proccessedText)) {
-			accentuation(proccessedText, svarita);
+		const processedText: string = text;
+		if (udatta.test(processedText)) {
+			accentuation(processedText, udatta);
+		} else if (svarita.test(processedText)) {
+			accentuation(processedText, svarita);
 		}
 		return text;
 	};
