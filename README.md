@@ -31,7 +31,7 @@ Replacement Rules for Vowels.
 |Vowel Type|Rules|Before Replacement|After Replacement|
 |:-:|:-:|:-:|:-:|
 |long vowels|`=` + short vowels (contains r)|`=a`, `=A`|`ā`, `Ā`|
-|r, l as vowels|`,` + `r` or `l`|`,r`|`r̥`|
+|r, l as short vowels|`,` + `r` or `l`|`,r`|`r̥`|
 
 #### Accentuation
 
