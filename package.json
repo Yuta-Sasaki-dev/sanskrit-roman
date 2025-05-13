@@ -1,9 +1,8 @@
 {
   "name": "sanskrit-roman",
-  "publisher": "Yuta Sasaki",
   "displayName": "Sanskrit-Roman",
   "description": "Romanized-transcription for sanskrit texts.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -11,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./out/extension.js",
+  "main": "/dist/extension.js",
   "contributes": {
     "commands": [
       {
