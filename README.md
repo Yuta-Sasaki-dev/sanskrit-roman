@@ -1,16 +1,16 @@
 # Sanskrit-Roman
 
-This extension converts plain alphabets to romanized-transcript of Sanskrit (or Old Indo-Aryan).
+This extension converts plain alphabets to romanized-transcript of Sanskrit language (or Old Indo-Aryan).
 
 ## Getting Started
 
 ### Installation
 
 1. Download `.vsix` file from "Releases" page.
-2. Start VSCode and run this command:  `Extensions: Install from VSIX...`
+2. Start VSCode and run command:  `Extensions: Install from VSIX...`
 3. choose `vsix` file that you downloaded.
 
-### Rules to Replace alphabets
+### Usage
 
 Replace texts in circumflex `%skt{}`.
 
