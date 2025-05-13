@@ -1,16 +1,20 @@
 # Sanskrit-Roman
 
-This extension converts plain alphabets to romanized-transcript for Sanskrit (or Old Indo-Aryan).
+This extension converts plain alphabets to romanized-transcript of Sanskrit (or Old Indo-Aryan).
 
-## Features
+## Getting Started
 
-You can typing Sanskrit texts without using MS Word or other proprietary softwares.
+### Installation
 
-## Rules to Replace alphabets
+1. Download `.vsix` file from "Releases" page.
+2. Start VSCode and run this command:  `Extensions: Install from VSIX...`
+3. choose `vsix` file that you downloaded.
+
+### Rules to Replace alphabets
 
 Replace texts in circumflex `%skt{}`.
 
-### Example
+#### Example
 
 Original text:
 
@@ -18,9 +22,9 @@ Original text:
 
 Processed text:
 
-`dharmaikatānāḥ puruṣā yadāsan satyavādinaḥ /`;
+`dharmaikatānāḥ puruṣā yadāsan satyavādinaḥ /`
 
-### Vowels
+#### Vowels
 
 Replacement Rules for Vowels.
 
@@ -36,7 +40,7 @@ Replacement Rules for Vowels.
 |Udātta Accent|`,(vowel)`|`,(a)`, `,(=a)`|`á`, `ā́`|
 |Svarita Accent|`_(vowel)`|`_(a)`, `_(=a)`|`à`, `ā̀`|
 
-### Consonants
+#### Consonants
 
 |Consonant Type|Rules|Example(Before)|Example(After)|
 |:-:|:-:|:-:|:-:|
@@ -46,18 +50,12 @@ Replacement Rules for Vowels.
 |Palatal Fricative|`,` + s|`,s`|`ś`|
 |Anunāsika|`,` + m|`,m`|`m̐`|
 
-### Others
+#### Others
 
 `:root:` : `√`
-
-## Installation
-
-1. Download `.vsix` file from "Releases" page.
-2. Start VSCode and run this command:  `Extensions: Install from VSIX...`
-3. choose `vsix` file that you downloaded.
 
 ## Release Notes
 
 ### 0.1.0
 
-Full features released.
+Full features released. (Not finished bug fix yet.)
