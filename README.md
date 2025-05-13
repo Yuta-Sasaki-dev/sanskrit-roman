@@ -58,6 +58,6 @@ Replacement Rules for Vowels.
 
 ## Release Notes
 
-### 0.0.1
+### 0.1.0
 
-First Release.
+Full features released.
