@@ -12,7 +12,7 @@ This extension converts plain alphabets to romanized-transcript of Sanskrit lang
 
 ### Usage
 
-Replace texts in circumflex `%skt{}`.
+Replace texts in circumflex ``.
 
 #### Example
 
@@ -30,7 +30,7 @@ Replacement Rules for Vowels.
 
 |Vowel Type|Rules|Before Replacement|After Replacement|
 |:-:|:-:|:-:|:-:|
-|long vowels|`=` + short vowels (contains r)|`=a`, `=A`|`ā`, `Ā`|
+|long vowels|`=` + short vowels (contains r)|`=a`, `=A`, `=r`|`ā`, `Ā`, `r̥̄`|
 |r, l as short vowels|`,` + `r` or `l`|`,r`|`r̥`|
 
 #### Accentuation
