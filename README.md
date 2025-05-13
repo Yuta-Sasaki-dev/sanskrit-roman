@@ -12,7 +12,7 @@ This extension converts plain alphabets to romanized-transcript of Sanskrit lang
 
 ### Usage
 
-Replace texts in circumflex ``.
+Replaces text enclosed by `%skt{` and `}`.
 
 #### Example
 
