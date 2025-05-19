@@ -2,7 +2,7 @@
   "name": "sanskrit-roman",
   "displayName": "Sanskrit-Roman",
   "description": "Romanized-transcription for sanskrit texts.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -21,7 +21,7 @@
     "keybindings": [
       {
         "command": "sanskrit-roman.execReplace",
-        "key": "alt+s r",
+        "key": "ctrl+alt+s",
         "when": "editorTextFocus"
       }
     ]

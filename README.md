@@ -56,6 +56,10 @@ Replacement Rules for Vowels.
 
 ## Release Notes
 
+### 0.1.1
+
+default shortcut changed.
+
 ### 0.1.0
 
 Full features released. (Not finished bug fix yet.)
